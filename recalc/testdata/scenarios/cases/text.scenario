@@ -1,0 +1,15 @@
+# text operators and functions
+set A1 = Hello
+set A2 = World
+set B1 = =A1&" "&A2
+set B2 = =LEN(A1)
+set B3 = =LEFT(A1,3)
+set B4 = =RIGHT(A2,3)
+set B5 = =MID(A1,2,3)
+set B6 = =CONCAT(A1,A2)
+expect B1 = Hello World
+expect B2 = 5
+expect B3 = Hel
+expect B4 = rld
+expect B5 = ell
+expect B6 = HelloWorld

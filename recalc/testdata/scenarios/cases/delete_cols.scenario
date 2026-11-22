@@ -1,0 +1,13 @@
+# deleting a referenced column yields #REF!; surviving refs shift left
+set A1 = 1
+set B1 = 2
+set C1 = 3
+set D1 = =B1+C1
+set E1 = =A1+B1
+deletecols 1 1
+expect A1 = 1
+expect B1 = 3
+expect C1 = #REF!
+expectf C1 = =#REF!+B1
+expect D1 = #REF!
+expectf D1 = =A1+#REF!

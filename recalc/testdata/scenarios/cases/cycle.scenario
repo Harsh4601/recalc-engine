@@ -1,0 +1,9 @@
+# reference cycles resolve to #CYCLE! and propagate to dependents
+set A1 = =B1+1
+set B1 = =A1+1
+set C1 = =A1*2
+set D1 = 7
+expect A1 = #CYCLE!
+expect B1 = #CYCLE!
+expect C1 = #CYCLE!
+expect D1 = 7

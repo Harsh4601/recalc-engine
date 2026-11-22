@@ -1,0 +1,13 @@
+# deleting a referenced row yields #REF!; surviving refs shift up
+set A1 = 1
+set A2 = 2
+set A3 = 3
+set C1 = =A2+100
+set C3 = =A3+A1
+deleterows 1 1
+expect A1 = 1
+expect A2 = 3
+expect C1 = #REF!
+expectf C1 = =#REF!+100
+expect C2 = 4
+expectf C2 = =A2+A1

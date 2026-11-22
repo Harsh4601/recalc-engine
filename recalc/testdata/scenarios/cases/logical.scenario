@@ -1,0 +1,14 @@
+# conditionals and boolean logic
+set A1 = 5
+set B1 = =IF(A1>3,"big","small")
+set B2 = =IF(A1>10,"big","small")
+set B3 = =IFERROR(1/0,"caught")
+set B4 = =AND(A1>0,A1<10)
+set B5 = =OR(A1>10,A1<0)
+set B6 = =NOT(A1>10)
+expect B1 = big
+expect B2 = small
+expect B3 = caught
+expect B4 = TRUE
+expect B5 = FALSE
+expect B6 = TRUE

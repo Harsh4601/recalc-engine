@@ -1,0 +1,6 @@
+# absolute and mixed references evaluate the same as relative ones
+set A1 = 10
+set B1 = =$A$1*2
+set B2 = =$A1+A$1
+expect B1 = 20
+expect B2 = 20

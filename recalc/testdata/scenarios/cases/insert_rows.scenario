@@ -1,0 +1,12 @@
+# inserting rows shifts relative refs and the cells; absolute refs stay pinned
+set A1 = 10
+set A2 = 20
+set B2 = =A1+A2
+set C2 = =$A$1+A2
+insertrows 1 1
+expect A1 = 10
+expect A3 = 20
+expect B3 = 30
+expectf B3 = =A1+A3
+expect C3 = 30
+expectf C3 = =$A$1+A3

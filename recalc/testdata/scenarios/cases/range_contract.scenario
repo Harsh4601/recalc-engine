@@ -1,0 +1,14 @@
+# deleting rows inside a range contracts it; deleting all of it is #REF!
+set A1 = 1
+set A2 = 2
+set A3 = 3
+set A4 = 4
+set C1 = =SUM(A1:A4)
+set D1 = =SUM(A2:A3)
+deleterows 1 2
+expect A1 = 1
+expect A2 = 4
+expect C1 = 5
+expectf C1 = =SUM(A1:A2)
+expect D1 = #REF!
+expectf D1 = =SUM(#REF!)

@@ -1,0 +1,16 @@
+# range aggregation; non-numbers inside ranges are ignored
+set A1 = 1
+set A2 = 2
+set A3 = 3
+set A4 = 4
+set A5 = hello
+set B1 = =SUM(A1:A5)
+set B2 = =AVERAGE(A1:A4)
+set B3 = =MIN(A1:A4)
+set B4 = =MAX(A1:A4)
+set B5 = =COUNT(A1:A5)
+expect B1 = 10
+expect B2 = 2.5
+expect B3 = 1
+expect B4 = 4
+expect B5 = 4

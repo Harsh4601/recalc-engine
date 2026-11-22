@@ -1,0 +1,10 @@
+# a dependency chain still recomputes correctly after a structural edit
+set A1 = 1
+set A2 = =A1+1
+set A3 = =A2+1
+insertrows 0 2
+expect A3 = 1
+expect A4 = 2
+expect A5 = 3
+expectf A4 = =A3+1
+expectf A5 = =A4+1

@@ -1,0 +1,11 @@
+# type coercion in arithmetic and comparison
+set A1 = TRUE
+set A2 = 5
+set B1 = =A1+A2
+set B2 = ="10"+5
+set B3 = =3=3
+set B4 = =2<>2
+expect B1 = 6
+expect B2 = 15
+expect B3 = TRUE
+expect B4 = FALSE

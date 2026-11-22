@@ -1,0 +1,9 @@
+# inserting a column shifts column references
+set A1 = 5
+set B1 = 7
+set C1 = =A1+B1
+insertcols 1 1
+expect A1 = 5
+expect C1 = 7
+expect D1 = 12
+expectf D1 = =A1+C1

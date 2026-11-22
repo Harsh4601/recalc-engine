@@ -1,0 +1,9 @@
+# error values and error-priority aggregation
+set A1 = 10
+set A2 = 0
+set B1 = =A1/A2
+set B2 = =A1+NOPE()
+set C1 = =SUM(B1:B2)
+expect B1 = #DIV/0!
+expect B2 = #NAME?
+expect C1 = #DIV/0!
